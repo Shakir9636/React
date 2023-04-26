@@ -12,7 +12,7 @@ export default function TextForm(props) {
     const handleOnchange = (e) =>{
         setText(e.target.value);
     }
-    const [text, setText] = useState('Enter text here');
+    const [text, setText] = useState('');
     const handleCopy = () =>{
         let text = document.getElementById('mybox');
         text.select();
@@ -43,7 +43,7 @@ export default function TextForm(props) {
         <p>{text.split(" ").length} words {text.length} character</p>
         <p>{0.008 * text.split(" ").length} Minutes read</p>
         <h2>Preview</h2>
-        <p>{text}</p>
+        <p>{text.length > 0 ? text : "Enter something i the textbox above to preview it here"}</p>
     </div>
     </>
   )
